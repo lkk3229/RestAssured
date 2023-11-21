@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="day7.Authetications">
+      <class name="day8.CreateUser">
         <methods>
-          <include name="testDigestAuthentication"/>
-          <include name="testBasicAuthentication"/>
-          <include name="testPreemptiveAuthentication"/>
+          <include name="tes_createUser"/>
         </methods>
-      </class> <!-- day7.Authetications -->
+      </class> <!-- day8.CreateUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
