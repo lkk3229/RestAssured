@@ -1,5 +1,6 @@
 package day8;
 
+import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
@@ -13,16 +14,16 @@ import org.json.JSONObject;
 public class CreateUser {
 	
 	@Test
-	void tes_createUser()
+	void tes_createUser(ITestContext context)
 	{
 		
 		Faker faker = new Faker();
 		
 		JSONObject data = new JSONObject();
 		
-		data.put("name", faker.name().fullName());
+		data.put("name",faker.name().fullName());
 		data.put("gender", "Male");
-		data.put("email", faker.internet().emailAddress());
+		data.put("email",faker.internet().emailAddress());
 		data.put("status", "inactive");
 		
 		String bearerToken = "130ab5a13e8112294603bc832473f755d6ca8072b248094106bb86b78ae2a8cd";
@@ -37,7 +38,9 @@ public class CreateUser {
 			.jsonPath().getInt("id");
 		
 		System.out.println("Generated id is : "+id);
-				
+		
+		//context.setAttribute("user_id", id);
+		context.getSuite().setAttribute("user_id", id);
 	}
 
 }
